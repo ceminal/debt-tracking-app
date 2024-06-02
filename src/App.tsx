@@ -1,4 +1,3 @@
-import './App.css'
 import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Login/Login'
 import Debts from './pages/Debts/Debts';

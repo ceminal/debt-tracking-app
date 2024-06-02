@@ -17,13 +17,13 @@ const Register: React.FC = () => {
                 name: values.name 
             });
             if (response.status === 200 || response.status === 201) {
-                message.success('Registration successful! Please log in.');
+                message.success('Kayıt başarılı!');
                 navigate('/login');
             } else {
-                message.error('Registration failed. Please check your details and try again.');
+                message.error('Kayıt işlemi başarısız.');
             }
         } catch (error) {
-            message.error('An error occurred during registration.');
+            message.error('error');
         }
     };
 
@@ -74,7 +74,7 @@ const Register: React.FC = () => {
                                     if (!value || getFieldValue('password') === value) {
                                         return Promise.resolve();
                                     }
-                                    return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                    return Promise.reject(new Error('Şifreler uyuşmuyor!'));
                                 },
                             }),
                         ]}
@@ -87,10 +87,10 @@ const Register: React.FC = () => {
                     </Form.Item>
                     <Form.Item>
                         <Button type="primary" htmlType="submit" className="register-form-button">
-                            Register
+                            Kayıt Ol
                         </Button>
                         <Button type="default" onClick={navigateToLogin} className="register-form-button">
-                            Cancel
+                            İptal
                         </Button>
                     </Form.Item>
                 </Form>
